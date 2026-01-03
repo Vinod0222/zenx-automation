@@ -1,3 +1,4 @@
+import stockImage from "@assets/stock_images/futuristic_ai_automa_a49613e1.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -88,19 +89,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard 
               title="AI Chatbots"
-              description="Intelligent conversational agents that handle customer support, lead generation, and sales inquiries instantly."
+              description="Website & WhatsApp chatbots. Lead qualification & customer support with 24/7 automated responses."
               icon={Bot}
               delay={0.1}
             />
             <ServiceCard 
               title="Workflow Automation"
-              description="Connect your favorite tools and automate repetitive tasks. Save hours of manual work every week."
+              description="CRM, Google Sheets, Email & API integrations. Automated lead routing & follow-ups for reduced manual work."
               icon={Zap}
               delay={0.2}
             />
             <ServiceCard 
               title="AI Assistants"
-              description="Custom GPTs trained on your business data to assist employees with research, writing, and analysis."
+              description="Sales, booking & customer engagement bots. Business-specific training for scalable and secure deployments."
               icon={BrainCircuit}
               delay={0.3}
             />
@@ -120,9 +121,10 @@ export default function Home() {
               
               <div className="space-y-8">
                 {[
-                  { title: "Business Analysis", desc: "We analyze your workflows to identify high-impact automation opportunities." },
-                  { title: "Custom Development", desc: "Our team builds and trains your AI solution using cutting-edge models." },
-                  { title: "Deployment & Support", desc: "We integrate the solution and provide ongoing optimization." }
+                  { title: "Discover", desc: "Understand your business goals and identify high-impact automation opportunities." },
+                  { title: "Build", desc: "Design & train AI chatbots while configuring custom workflows & integrations." },
+                  { title: "Deploy", desc: "Launch across web & messaging platforms with rigorous testing for performance & reliability." },
+                  { title: "Optimize", desc: "Monitor usage and continuously refine responses for maximum business ROI." }
                 ].map((step, i) => (
                   <motion.div 
                     key={i}
@@ -146,10 +148,9 @@ export default function Home() {
             
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full" />
-              {/* Unsplash abstract tech image */}
               {/* Abstract tech visualization */}
               <img 
-                src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=800" 
+                src={stockImage} 
                 alt="AI Process Visualization" 
                 className="rounded-2xl border border-white/10 shadow-2xl"
               />
