@@ -1,0 +1,84 @@
+Create a modern, minimal MVP website for an AI Automation Agency.
+
+Agency name: ZenX (keep editable).
+Theme: Dark / black background with subtle electric blue accents.
+Style: Professional, futuristic, premium startup look.
+Tech stack: HTML + CSS + JavaScript (static website).
+Responsive: Mobile, tablet, desktop.
+
+PAGES / SECTIONS:
+
+1. HERO SECTION
+- Headline: “Automate Smarter. Scale Faster.”
+- Subheadline: “AI-powered chatbots and automation solutions for growing businesses.”
+- Primary CTA button: “Get a Free Demo”
+- Secondary CTA: “View Pricing”
+- Dark gradient background with abstract AI visuals.
+
+2. SERVICES SECTION
+Display 3 service cards:
+- AI Chatbots (Web, WhatsApp, Lead Automation)
+- Workflow Automation (CRM, Sheets, Email, APIs)
+- AI Assistants (Support, Sales, Booking)
+
+Each card should have a clean icon and short description.
+
+3. CHATBOT PRICING SECTION (IMPORTANT)
+Create a modern pricing table with 3 plans:
+
+BASIC – ₹29,999 (one-time)
+- Website AI chatbot
+- Trained on business FAQs
+- Lead capture (Name, Email)
+- Basic UI customization
+- Email support
+
+STANDARD – ₹34,999 (one-time) — Most Popular
+- AI-powered chatbot (LLM-based)
+- Website + WhatsApp integration
+- Lead capture (Name, Phone, Business)
+- Google Sheets / CRM integration
+- Priority support
+- “Most Popular” badge
+
+PREMIUM – ₹49,999 (one-time)
+- Fully custom AI chatbot
+- Website + WhatsApp + CRM integration
+- Advanced automation workflows
+- Analytics & continuous optimization
+- 30 days post-deployment support
+- Dedicated onboarding & setup
+
+Add a “Get Started” button under each plan.
+
+4. HOW IT WORKS SECTION
+Show 3 steps:
+- Business Understanding
+- AI Bot Development & Training
+- Deployment & Optimization
+
+Use minimal icons and clean layout.
+
+5. DEMO / CONTACT SECTION
+- Heading: “See ZenX in Action”
+- Text: “Book a free demo and see how automation can grow your business.”
+- Button: “Book a Free Demo”
+- Placeholder for chatbot widget embed (commented).
+
+6. FOOTER
+- Brand name and logo placeholder
+- Tagline: “Automate | Innovate | Elevate”
+- Social media links placeholders
+- Copyright notice
+
+EXTRA REQUIREMENTS:
+- Use modern fonts (Inter or Poppins).
+- Smooth hover and scroll animations.
+- Clean spacing and premium feel.
+- No frameworks (pure HTML, CSS, JS).
+- Code should be clean, commented, and Netlify-ready.
+
+OUTPUT:
+- Full HTML file
+- Separate CSS file
+- Minimal JS file
