@@ -9,12 +9,6 @@ import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, X } fro
 import { useState } from "react";
 import BotpressChat from "@/components/BotpressChat";
 
-declare global {
-  interface Window {
-    botpress: any;
-  }
-}
-
 export default function Home() {
   const [showChat, setShowChat] = useState(false);
 

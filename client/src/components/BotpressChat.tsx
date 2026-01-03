@@ -8,6 +8,7 @@ declare global {
 
 export default function BotpressChat() {
   useEffect(() => {
+    // Load Botpress script dynamically
     const script = document.createElement("script");
     script.src = "https://cdn.botpress.cloud/webchat/v3.5/inject.js";
     script.async = true;
@@ -32,8 +33,9 @@ export default function BotpressChat() {
           }
         });
 
+        // Force open chat after load
         setTimeout(() => {
-          if (window.botpress && typeof window.botpress.open === "function") {
+          if (window.botpress && typeof window.botpress.open === 'function') {
             window.botpress.open();
           }
         }, 1000);
