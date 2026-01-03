@@ -1,4 +1,4 @@
-import stockImage from "@assets/stock_images/futuristic_ai_automa_a49613e1.jpg";
+import stockImage from "@assets/stock_images/ai_automation_agency_a256d5c1.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
