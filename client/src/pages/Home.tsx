@@ -265,9 +265,17 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <Link href="/" className="group flex flex-col items-start mb-6">
-                <div className="h-20 transition-transform group-hover:scale-105">
-                  <img src="/assets/logo_main.png" alt="ZenX Logo" className="h-full w-auto object-contain" />
+              <Link href="/" className="group flex flex-col items-start mb-8 leading-none gap-0">
+                <div className="flex items-baseline gap-1">
+                  <span className="text-4xl font-bold tracking-tighter text-white">zen</span>
+                  <span className="text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-600">X</span>
+                </div>
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Automate</span>
+                  <span className="h-3 w-[1px] bg-white/20"></span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Innovate</span>
+                  <span className="h-3 w-[1px] bg-white/20"></span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Elevate</span>
                 </div>
               </Link>
               <p className="text-muted-foreground max-w-xs">

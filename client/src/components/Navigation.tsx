@@ -29,9 +29,17 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="group flex flex-col items-start">
-            <div className="h-14 transition-transform group-hover:scale-105">
-              <img src="/assets/logo_main.png" alt="ZenX Logo" className="h-full w-auto object-contain" />
+          <Link href="/" className="group flex flex-col items-start leading-none gap-0">
+            <div className="flex items-baseline gap-1">
+              <span className="text-3xl font-bold tracking-tighter text-white">zen</span>
+              <span className="text-4xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-600">X</span>
+            </div>
+            <div className="flex items-center gap-1.5 mt-1">
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/90">Automate</span>
+              <span className="h-2.5 w-[1px] bg-white/20"></span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/90">Innovate</span>
+              <span className="h-2.5 w-[1px] bg-white/20"></span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/90">Elevate</span>
             </div>
           </Link>
 
