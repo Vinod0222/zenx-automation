@@ -19,38 +19,54 @@ export default function Home() {
 
   useEffect(() => {
     if (showChat && window.botpress) {
-      window.botpress.on("webchat:ready", () => {
-        window.botpress.open();
-      });
-      window.botpress.init({
-        "botId": "ae9965f2-0930-47c0-9f82-addd9ee197c4",
-        "configuration": {
-          "version": "v2",
-          "botName": "ZenX Assistant",
-          "botDescription": "",
-          "website": {},
-          "email": {},
-          "phone": {},
-          "termsOfService": {},
-          "privacyPolicy": {},
-          "color": "#715ab0",
-          "variant": "solid",
-          "headerVariant": "solid",
-          "themeMode": "dark",
-          "fontFamily": "inter",
-          "radius": 2,
-          "feedbackEnabled": false,
-          "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
-          "soundEnabled": false,
-          "embeddedChatId": "bp-embedded-webchat",
-          "proactiveMessageEnabled": false,
-          "proactiveBubbleMessage": "Hi! 👋 Need help?",
-          "proactiveBubbleTriggerType": "afterDelay",
-          "proactiveBubbleDelayTime": 10
-        },
-        "clientId": "0c1c9e09-a7ab-479f-a3ad-8e0687946e18",
-        "selector": "#webchat"
-      });
+      const initBot = () => {
+        window.botpress.init({
+          "botId": "ae9965f2-0930-47c0-9f82-addd9ee197c4",
+          "configuration": {
+            "version": "v2",
+            "botName": "ZenX Assistant",
+            "botDescription": "",
+            "website": {},
+            "email": {},
+            "phone": {},
+            "termsOfService": {},
+            "privacyPolicy": {},
+            "color": "#715ab0",
+            "variant": "solid",
+            "headerVariant": "solid",
+            "themeMode": "dark",
+            "fontFamily": "inter",
+            "radius": 2,
+            "feedbackEnabled": false,
+            "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
+            "soundEnabled": false,
+            "embeddedChatId": "bp-embedded-webchat",
+            "proactiveMessageEnabled": false,
+            "proactiveBubbleMessage": "Hi! 👋 Need help?",
+            "proactiveBubbleTriggerType": "afterDelay",
+            "proactiveBubbleDelayTime": 10
+          },
+          "clientId": "0c1c9e09-a7ab-479f-a3ad-8e0687946e18",
+          "selector": "#webchat",
+          "containerWidth": "100%",
+          "layoutWidth": "100%"
+        });
+      };
+
+      if (window.botpress.open) {
+        initBot();
+        window.botpress.on("webchat:ready", () => {
+          window.botpress.open();
+        });
+      } else {
+        // If script loaded but init/open not ready
+        const interval = setInterval(() => {
+          if (window.botpress && window.botpress.init) {
+            initBot();
+            clearInterval(interval);
+          }
+        }, 500);
+      }
     }
   }, [showChat]);
 
