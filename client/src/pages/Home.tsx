@@ -1,4 +1,4 @@
-import stockImage from "@assets/stock_images/ai_automation_agency_a256d5c1.jpg";
+import stockImage from "@assets/stock_images/industrial_robotic_a_ef02b53c.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -266,7 +266,12 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="text-2xl font-bold font-heading mb-4 block">
-                <span className="text-primary">Zen</span>X
+                <div className="flex flex-col leading-none">
+                  <span className="text-primary text-3xl">ZenX</span>
+                  <span className="text-[12px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
+                    Automate | Innovate | Elevate
+                  </span>
+                </div>
               </Link>
               <p className="text-muted-foreground max-w-xs">
                 Empowering businesses with intelligent automation solutions for the future.

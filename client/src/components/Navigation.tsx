@@ -30,7 +30,12 @@ export function Navigation() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold font-heading tracking-tighter flex items-center gap-2">
-            <span className="text-primary">Zen</span>X
+            <div className="flex flex-col leading-none">
+              <span className="text-primary">ZenX</span>
+              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
+                Automate | Innovate | Elevate
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
