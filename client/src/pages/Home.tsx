@@ -266,12 +266,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="group flex flex-col items-start mb-6">
-                <div className="h-16 w-40 overflow-hidden transition-transform group-hover:scale-105">
-                  <embed src="/assets/logo_zenx.pdf" type="application/pdf" className="h-full w-full pointer-events-none" />
+                <div className="h-20 transition-transform group-hover:scale-105">
+                  <img src="/assets/logo_main.png" alt="ZenX Logo" className="h-full w-auto object-contain" />
                 </div>
-                <span className="text-[12px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
-                  Automate | Innovate | Elevate
-                </span>
               </Link>
               <p className="text-muted-foreground max-w-xs">
                 Empowering businesses with intelligent automation solutions for the future.

@@ -30,12 +30,9 @@ export function Navigation() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="group flex flex-col items-start">
-            <div className="h-12 w-32 overflow-hidden transition-transform group-hover:scale-105">
-              <embed src="/assets/logo_zenx.pdf" type="application/pdf" className="h-full w-full pointer-events-none" />
+            <div className="h-14 transition-transform group-hover:scale-105">
+              <img src="/assets/logo_main.png" alt="ZenX Logo" className="h-full w-auto object-contain" />
             </div>
-            <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
-              Automate | Innovate | Elevate
-            </span>
           </Link>
 
           {/* Desktop Nav */}
