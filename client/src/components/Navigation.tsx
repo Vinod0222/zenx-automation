@@ -29,16 +29,13 @@ export function Navigation() {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="group flex items-center gap-3">
-            <div className="relative h-10 w-10 overflow-hidden rounded-lg border border-white/10 bg-white/5 p-1 transition-transform group-hover:scale-105">
-              <embed src="/assets/logo_new.pdf" type="application/pdf" className="h-full w-full pointer-events-none" />
+          <Link href="/" className="group flex flex-col items-start">
+            <div className="h-12 w-32 overflow-hidden transition-transform group-hover:scale-105">
+              <embed src="/assets/logo_zenx.pdf" type="application/pdf" className="h-full w-full pointer-events-none" />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-xl font-bold font-heading tracking-tight text-primary">ZenX</span>
-              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
-                Automate | Innovate | Elevate
-              </span>
-            </div>
+            <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
+              Automate | Innovate | Elevate
+            </span>
           </Link>
 
           {/* Desktop Nav */}
