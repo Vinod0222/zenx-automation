@@ -265,9 +265,12 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             <div className="col-span-1 md:col-span-2">
-              <Link href="/" className="text-2xl font-bold font-heading mb-4 block">
+              <Link href="/" className="group flex items-center gap-4 mb-6">
+                <div className="relative h-14 w-14 overflow-hidden rounded-xl border border-white/10 bg-white/5 p-2 transition-transform group-hover:scale-105">
+                  <embed src="/assets/logo_new.pdf" type="application/pdf" className="h-full w-full pointer-events-none" />
+                </div>
                 <div className="flex flex-col leading-none">
-                  <span className="text-primary text-3xl">ZenX</span>
+                  <span className="text-3xl font-bold font-heading text-primary">ZenX</span>
                   <span className="text-[12px] font-medium text-muted-foreground uppercase tracking-[0.2em] mt-1">
                     Automate | Innovate | Elevate
                   </span>
