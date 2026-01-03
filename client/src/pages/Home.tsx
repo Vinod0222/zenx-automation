@@ -7,6 +7,12 @@ import { ContactForm } from "@/components/ContactForm";
 import { motion } from "framer-motion";
 import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight } from "lucide-react";
 
+declare global {
+  interface Window {
+    botpress: any;
+  }
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -249,7 +255,14 @@ export default function Home() {
                 <div className="text-sm text-muted-foreground mb-4">
                   Try our demo bot to see how we can handle customer inquiries automatically.
                 </div>
-                <button className="text-primary font-medium flex items-center gap-2 hover:gap-3 transition-all">
+                <button 
+                  onClick={() => {
+                    if (window.botpress) {
+                      window.botpress.open();
+                    }
+                  }}
+                  className="text-primary font-medium flex items-center gap-2 hover:gap-3 transition-all"
+                >
                   Start Chat <ArrowRight size={16} />
                 </button>
               </div>
