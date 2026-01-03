@@ -6,7 +6,8 @@ import { PricingCard } from "@/components/PricingCard";
 import { ContactForm } from "@/components/ContactForm";
 import { motion, AnimatePresence } from "framer-motion";
 import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import BotpressChat from "@/components/BotpressChat";
 
 declare global {
   interface Window {
@@ -16,59 +17,6 @@ declare global {
 
 export default function Home() {
   const [showChat, setShowChat] = useState(false);
-
-  useEffect(() => {
-    if (showChat && window.botpress) {
-      const initBot = () => {
-        window.botpress.init({
-          "botId": "ae9965f2-0930-47c0-9f82-addd9ee197c4",
-          "configuration": {
-            "version": "v2",
-            "botName": "ZenX Assistant",
-            "botDescription": "",
-            "website": {},
-            "email": {},
-            "phone": {},
-            "termsOfService": {},
-            "privacyPolicy": {},
-            "color": "#715ab0",
-            "variant": "solid",
-            "headerVariant": "solid",
-            "themeMode": "dark",
-            "fontFamily": "inter",
-            "radius": 2,
-            "feedbackEnabled": false,
-            "footer": "[⚡ by Botpress](https://botpress.com/?from=webchat)",
-            "soundEnabled": false,
-            "embeddedChatId": "bp-embedded-webchat",
-            "proactiveMessageEnabled": false,
-            "proactiveBubbleMessage": "Hi! 👋 Need help?",
-            "proactiveBubbleTriggerType": "afterDelay",
-            "proactiveBubbleDelayTime": 10
-          },
-          "clientId": "0c1c9e09-a7ab-479f-a3ad-8e0687946e18",
-          "selector": "#webchat",
-          "containerWidth": "100%",
-          "layoutWidth": "100%"
-        });
-      };
-
-      if (window.botpress.open) {
-        initBot();
-        window.botpress.on("webchat:ready", () => {
-          window.botpress.open();
-        });
-      } else {
-        // If script loaded but init/open not ready
-        const interval = setInterval(() => {
-          if (window.botpress && window.botpress.init) {
-            initBot();
-            clearInterval(interval);
-          }
-        }, 500);
-      }
-    }
-  }, [showChat]);
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
@@ -92,7 +40,7 @@ export default function Home() {
               >
                 <X size={20} />
               </button>
-              <div id="webchat" className="w-full h-full" />
+              <BotpressChat />
             </motion.div>
           </motion.div>
         )}

@@ -1,0 +1,178 @@
+Yes 👍
+Below is a **SINGLE-PAGE, COPY-PASTE INSTRUCTION SHEET** you can **give directly to Replit AI** (or follow yourself).
+This is **React + Botpress embedded chat**, **no bubble**, **auto-open**, **single page**.
+
+---
+
+# 📄 SINGLE PAGE INSTRUCTIONS
+
+### (React + Botpress Embedded Chat – Auto Start, No Bubble)
+
+## 🎯 Goal
+
+Create a **single-page React app** that:
+
+* Loads a **Botpress chatbot**
+* **Starts immediately** (no click, no bubble)
+* Shows chat **full screen**
+* Works on **Replit**
+
+---
+
+## ✅ STEP 1: CREATE A REACT APP ON REPLIT
+
+1. Go to **Replit**
+2. Create new Repl → **React**
+3. Name it anything (e.g. `zenx-chat`)
+
+---
+
+## ✅ STEP 2: CREATE `BotpressChat.jsx`
+
+Create a new file:
+📄 `src/BotpressChat.jsx`
+
+👉 Paste **THIS ENTIRE CODE**:
+
+```jsx
+import { useEffect } from "react";
+
+export default function BotpressChat() {
+  useEffect(() => {
+    // Load Botpress script dynamically
+    const script = document.createElement("script");
+    script.src = "https://cdn.botpress.cloud/webchat/v3.5/inject.js";
+    script.async = true;
+
+    script.onload = () => {
+      window.botpress.init({
+        botId: "ae9965f2-0930-47c0-9f82-addd9ee197c4",
+        clientId: "0c1c9e09-a7ab-479f-a3ad-8e0687946e18",
+        selector: "#webchat",
+        configuration: {
+          version: "v2",
+          botName: "ZenX Assistant",
+          themeMode: "dark",
+          fontFamily: "inter",
+          color: "#715ab0",
+          radius: 2,
+          feedbackEnabled: false,
+          soundEnabled: false,
+          footer: "",
+          proactiveMessageEnabled: false
+        }
+      });
+
+      // Force open chat after load
+      setTimeout(() => {
+        window.botpress.open();
+      }, 1000);
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <div
+      id="webchat"
+      style={{
+        width: "100vw",
+        height: "100vh"
+      }}
+    />
+  );
+}
+```
+
+---
+
+## ✅ STEP 3: UPDATE `App.jsx`
+
+Open:
+📄 `src/App.jsx`
+
+Replace everything with:
+
+```jsx
+import BotpressChat from "./BotpressChat";
+
+function App() {
+  return <BotpressChat />;
+}
+
+export default App;
+```
+
+---
+
+## ✅ STEP 4: ADD REQUIRED CSS
+
+Open:
+📄 `src/index.css` (or `App.css`)
+
+👉 Paste this:
+
+```css
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* Hide floating bubble */
+.bpFab {
+  display: none !important;
+}
+
+/* Full-screen chat */
+.bpWebchat {
+  width: 100% !important;
+  height: 100% !important;
+}
+```
+
+---
+
+## ✅ STEP 5: RUN THE PROJECT
+
+1. Click **Run** ▶️
+2. Open Web Preview
+
+---
+
+## 🎉 EXPECTED RESULT
+
+* ✅ Page loads
+* ✅ Chat opens automatically
+* ❌ No bubble icon
+* ✅ Full-screen ZenX chatbot
+* ✅ Demo flow works (name, email, phone, business)
+
+---
+
+## ❌ DO NOT DO THESE
+
+* ❌ Do NOT paste `<script>` inside JSX
+* ❌ Do NOT use bubble widget
+* ❌ Do NOT use `webchat:ready` event in React
+
+---
+
+## 🧠 SUMMARY (ONE LINE)
+
+> This React app loads Botpress dynamically, embeds chat in a div, hides the bubble, and auto-opens the chatbot on page load.
+
+---
+
+If you want, next I can:
+
+* 🔹 Add **/chat route only**
+* 🔹 Add **branding header above chat**
+* 🔹 Add **redirect after demo capture**
+* 🔹 Convert this into **production Netlify deploy**
+
+Just tell me 👍
