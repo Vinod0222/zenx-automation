@@ -257,8 +257,14 @@ export default function Home() {
                 </div>
                 <button 
                   onClick={() => {
-                    if (window.botpress) {
-                      window.botpress.open();
+                    const botpress = (window as any).botpress;
+                    if (botpress && typeof botpress.open === 'function') {
+                      botpress.open();
+                    } else {
+                      console.error("Botpress not initialized yet");
+                      // Fallback: try to find the toggle button if it exists
+                      const toggle = document.querySelector('.bpw-floating-button');
+                      if (toggle instanceof HTMLElement) toggle.click();
                     }
                   }}
                   className="text-primary font-medium flex items-center gap-2 hover:gap-3 transition-all"
