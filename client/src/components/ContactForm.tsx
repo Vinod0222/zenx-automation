@@ -31,16 +31,11 @@ export function ContactForm() {
     // Form URL: https://docs.google.com/forms/d/e/1FAIpQLSdLl9dyZWgQy5D5ibniGuTUH-jK3Hq2M1LYM5H7EHnf1MdL1g/formResponse
     const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdLl9dyZWgQy5D5ibniGuTUH-jK3Hq2M1LYM5H7EHnf1MdL1g/formResponse";
     
-    // Note: You need the entry IDs from your Google Form
-    // Since I don't have them, I'll use a generic approach that might need the user to provide them
-    // For now, I'll implement the UI restoration as requested.
-    
     const formData = new FormData();
-    // These IDs are placeholders and need to be replaced with actual entry.XXXXX IDs from the form source
-    formData.append("entry.123456789", data.name);
-    formData.append("entry.987654321", data.email);
-    formData.append("entry.456789123", data.businessType || "");
-    formData.append("entry.789123456", data.message);
+    formData.append("entry.1574502644", data.name);
+    formData.append("entry.693925824", data.email);
+    formData.append("entry.144251401", data.businessType || "");
+    formData.append("entry.725619370", data.message);
 
     try {
       // Use no-cors to avoid redirect issues with Google Forms
