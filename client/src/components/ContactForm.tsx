@@ -23,7 +23,12 @@ export function ContactForm() {
 
   function onSubmit(data: InsertInquiry) {
     mutate(data, {
-      onSuccess: () => form.reset()
+      onSuccess: () => {
+        const whatsappNumber = "91701388368";
+        const message = `*New Lead from ZenX Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Business:* ${data.businessType || 'N/A'}%0A*Message:* ${data.message}`;
+        window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+        form.reset();
+      }
     });
   }
 
