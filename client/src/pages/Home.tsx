@@ -43,13 +43,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 
                   href="#contact"
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] transition-all duration-300"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:shadow-[0_0_40px_rgba(186,255,255,0.4)] transition-all duration-300 animate-glow"
                 >
                   Get a Free Demo
                 </a>
                 <a 
                   href="#pricing"
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group glass-panel"
                 >
                   View Pricing
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -91,19 +91,19 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ServiceCard 
               title="AI Chatbots"
-              description="Website & WhatsApp chatbots. Lead qualification & customer support with 24/7 automated responses."
+              description="Customized Website & WhatsApp chatbots. Lead qualification & automated customer support that learns your business."
               icon={Bot}
               delay={0.1}
             />
             <ServiceCard 
               title="Workflow Automation"
-              description="CRM, Google Sheets, Email & API integrations. Automated lead routing & follow-ups for reduced manual work."
+              description="Connect CRM, Google Sheets, & Email. Automated workflows that move data and save hours of manual labor."
               icon={Zap}
               delay={0.2}
             />
             <ServiceCard 
-              title="AI Assistants"
-              description="Sales, booking & customer engagement bots. Business-specific training for scalable and secure deployments."
+              title="AI Sales Agents"
+              description="Intelligent sales, booking & engagement bots. High-performance AI trained to convert visitors into customers."
               icon={BrainCircuit}
               delay={0.3}
             />
