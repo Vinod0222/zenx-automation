@@ -9,136 +9,23 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
 export function ContactForm() {
-  const { mutate, isPending } = useCreateInquiry();
-  
-  const form = useForm<InsertInquiry>({
-    resolver: zodResolver(insertInquirySchema),
-    defaultValues: {
-      name: "",
-      email: "",
-      businessType: "",
-      message: ""
-    }
-  });
-
-  function onSubmit(data: InsertInquiry) {
-    mutate(data, {
-      onSuccess: () => {
-        const whatsappNumber = "917019388368";
-        const emailAddress = "vinodyavp2001@gmail.com";
-        const subject = "New Lead from ZenX Website";
-        const body = `Name: ${data.name}\nEmail: ${data.email}\nBusiness: ${data.businessType || 'N/A'}\nMessage: ${data.message}`;
-        
-        const message = `*New Lead from ZenX Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Business:* ${data.businessType || 'N/A'}%0A*Message:* ${data.message}`;
-        
-        // Open WhatsApp
-        window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-        
-        // Open Gmail/Email
-        window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
-        
-        form.reset();
-      }
-    });
-  }
-
   return (
-    <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm">
-      <h3 className="text-2xl font-bold font-heading mb-6">Book a Free Demo</h3>
-      
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-          <FormField
-            control={form.control}
-            name="name"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-white/80">Name</FormLabel>
-                <FormControl>
-                  <Input 
-                    placeholder="John Doe" 
-                    className="bg-black/20 border-white/10 focus:border-primary/50 h-12"
-                    {...field} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white/80">Email</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="john@company.com" 
-                      className="bg-black/20 border-white/10 focus:border-primary/50 h-12"
-                      {...field} 
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="businessType"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-white/80">Business Type</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="e.g. E-commerce" 
-                      className="bg-black/20 border-white/10 focus:border-primary/50 h-12"
-                      value={field.value || ''}
-                      onChange={field.onChange}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-white/80">How can we help?</FormLabel>
-                <FormControl>
-                  <Textarea 
-                    placeholder="Tell us about your automation needs..." 
-                    className="bg-black/20 border-white/10 focus:border-primary/50 min-h-[120px] resize-none"
-                    {...field} 
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <Button 
-            type="submit" 
-            disabled={isPending}
-            className="w-full h-12 text-base bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
-          >
-            {isPending ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              "Submit Inquiry"
-            )}
-          </Button>
-        </form>
-      </Form>
+    <div className="p-1 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden h-[800px] w-full relative">
+      <div className="absolute inset-0 flex items-center justify-center bg-background/50 backdrop-blur-sm z-0">
+        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+      </div>
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSe_9L4M6_qW9_hD6W6H6X9X9X9X9X9X9X9X9X9X9X9X9X9X9/viewform?embedded=true" 
+        width="100%" 
+        height="100%" 
+        frameBorder="0" 
+        marginHeight={0} 
+        marginWidth={0}
+        className="relative z-10 rounded-2xl grayscale invert contrast-125 opacity-90 hover:opacity-100 transition-opacity"
+        title="Contact Form"
+      >
+        Loading…
+      </iframe>
     </div>
   );
 }
