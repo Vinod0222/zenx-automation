@@ -30,14 +30,14 @@ export default function Home() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-primary mb-6 backdrop-blur-sm">
                 Next Gen AI Automation
               </span>
-              <h1 className="text-6xl md:text-8xl font-black font-heading tracking-tighter mb-8 leading-[0.9] uppercase">
-                Automate <span className="text-primary text-glow italic">Everything.</span> <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-accent">
-                  Innovate Faster.
+              <h1 className="text-5xl md:text-7xl font-bold font-heading tracking-tight mb-6 leading-[1.1]">
+                Automate Smarter. <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 text-glow">
+                  Scale Faster.
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
-                Empowering businesses with <span className="text-white font-medium">autonomous AI agents</span> and hyper-optimized workflows. The future of operations starts here.
+              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+                Transform your business with AI-powered chatbots and custom automation solutions. Reduce costs and increase efficiency overnight.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -45,7 +45,7 @@ export default function Home() {
                   href="#contact"
                   className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:shadow-[0_0_40px_rgba(186,255,255,0.4)] transition-all duration-300 animate-glow"
                 >
-                  Get a Free Demo
+                  Book a Free Demo
                 </a>
                 <a 
                   href="#pricing"
@@ -148,25 +148,15 @@ export default function Home() {
               </div>
             </div>
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="absolute inset-0 bg-primary/20 blur-[120px] -z-10 rounded-full animate-pulse" />
+            <div className="relative">
+              <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full" />
+              {/* Abstract tech visualization */}
               <img 
                 src={stockImage} 
                 alt="AI Process Visualization" 
-                className="rounded-[2.5rem] border border-white/10 shadow-2xl floating"
+                className="rounded-2xl border border-white/10 shadow-2xl"
               />
-              <div className="absolute -bottom-6 -right-6 p-6 glass-panel rounded-2xl hidden md:block">
-                <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-ping" />
-                  <span className="text-sm font-bold tracking-widest uppercase">System Online</span>
-                </div>
-              </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
