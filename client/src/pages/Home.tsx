@@ -30,14 +30,14 @@ export default function Home() {
               <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-primary mb-6 backdrop-blur-sm">
                 Next Gen AI Automation
               </span>
-              <h1 className="text-5xl md:text-7xl font-bold font-heading tracking-tight mb-6 leading-[1.1]">
-                Automate Smarter. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 text-glow">
-                  Scale Faster.
+              <h1 className="text-6xl md:text-8xl font-black font-heading tracking-tighter mb-8 leading-[0.9] uppercase">
+                Automate <span className="text-primary text-glow italic">Everything.</span> <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-blue-400 to-accent">
+                  Innovate Faster.
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-                Transform your business with AI-powered chatbots and custom automation solutions. Reduce costs and increase efficiency overnight.
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+                Empowering businesses with <span className="text-white font-medium">autonomous AI agents</span> and hyper-optimized workflows. The future of operations starts here.
               </p>
               
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
