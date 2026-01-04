@@ -45,7 +45,7 @@ export default function Home() {
                   href="#contact"
                   className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:shadow-[0_0_40px_rgba(186,255,255,0.4)] transition-all duration-300 animate-glow"
                 >
-                  Book a Free Demo
+                  Book Free Demo
                 </a>
                 <a 
                   href="#pricing"
@@ -75,6 +75,41 @@ export default function Home() {
           >
             <BrainCircuit size={64} />
           </motion.div>
+        </div>
+      </section>
+
+      {/* USE-CASES SECTION */}
+      <section id="use-cases" className="py-24 relative overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 italic">Tailored for Your Industry</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our AI solutions are designed to solve specific challenges across various sectors.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {[
+              { title: "Clinics & Hospitals", icon: "🏥" },
+              { title: "Local Businesses", icon: "🏪" },
+              { title: "Service Centers", icon: "🚗" },
+              { title: "Agencies", icon: "🏢" },
+              { title: "E-commerce", icon: "🛍️" }
+            ].map((useCase, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-all group"
+              >
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{useCase.icon}</div>
+                <h3 className="text-lg font-bold mb-2">{useCase.title}</h3>
+                <p className="text-xs text-muted-foreground italic">“Automate inquiries & capture leads 24/7”</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -207,6 +242,103 @@ export default function Home() {
               ]}
               delay={0.3}
             />
+          </div>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-8 text-sm text-muted-foreground/80">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>One-time setup</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>No hidden charges</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-primary" />
+              <span>Full ownership</span>
+            </div>
+          </div>
+
+          <div className="mt-16 text-center">
+            <a 
+              href="#contact"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all group glass-panel"
+            >
+              Book Free Demo
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* DEMO SECTION */}
+      <section className="py-24 bg-black/40">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+              <Bot size={120} />
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6 italic">See how it works</h2>
+            <p className="text-xl text-muted-foreground mb-8">
+              Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
+            </p>
+            <div className="flex flex-col items-center gap-4">
+              <p className="text-primary font-bold animate-pulse uppercase tracking-widest text-sm">
+                👉 Try asking for a demo
+              </p>
+              <button 
+                onClick={() => {
+                  if (window.botpress && window.botpress.open) {
+                    window.botpress.open();
+                  }
+                }}
+                className="px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all animate-glow"
+              >
+                Launch Live Chat
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ SECTION */}
+      <section id="faq" className="py-24 relative">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 italic">Frequently Asked Questions</h2>
+            <p className="text-muted-foreground">Clearing up any doubts before we start automating.</p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-4">
+            {[
+              { q: "Is this a one-time cost?", a: "Yes, our setup costs are one-time payments for building and integrating your custom AI solution. We believe in full ownership for our clients." },
+              { q: "Can this work for my business?", a: "Absolutely. We've designed automations for clinics, agencies, retail, and more. If you handle customer inquiries or data, AI can help." },
+              { q: "Where does the data go?", a: "All data captured by your AI is routed directly to your preferred platform—whether that's a CRM, Google Sheet, or your email. You have 100% data privacy." },
+              { q: "Can I change bot responses later?", a: "Yes. We provide you with an easy-to-use interface where you can update training data or specific responses anytime without technical knowledge." },
+              { q: "Do I need technical knowledge?", a: "Zero. We handle the heavy lifting, integration, and training. You just focus on scaling your business with the time you've saved." }
+            ].map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 transition-all"
+              >
+                <h3 className="text-lg font-bold mb-2 text-primary">Q: {faq.q}</h3>
+                <p className="text-muted-foreground">A: {faq.a}</p>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+            <h3 className="text-2xl font-bold mb-6">Still have questions?</h3>
+            <a 
+              href="#contact"
+              className="px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all"
+            >
+              Book Free Demo
+            </a>
           </div>
         </div>
       </section>
