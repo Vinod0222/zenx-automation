@@ -148,15 +148,25 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-[100px] -z-10 rounded-full" />
-              {/* Abstract tech visualization */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-primary/20 blur-[120px] -z-10 rounded-full animate-pulse" />
               <img 
                 src={stockImage} 
                 alt="AI Process Visualization" 
-                className="rounded-2xl border border-white/10 shadow-2xl"
+                className="rounded-[2.5rem] border border-white/10 shadow-2xl floating"
               />
-            </div>
+              <div className="absolute -bottom-6 -right-6 p-6 glass-panel rounded-2xl hidden md:block">
+                <div className="flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-green-500 animate-ping" />
+                  <span className="text-sm font-bold tracking-widest uppercase">System Online</span>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
