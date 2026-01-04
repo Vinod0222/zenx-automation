@@ -172,7 +172,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <PricingCard 
               title="Basic"
-              price="₹29,999"
+              price="₹24,999"
               features={[
                 "Basic AI Chatbot",
                 "Email Automation",
@@ -196,7 +196,7 @@ export default function Home() {
             />
             <PricingCard 
               title="Premium"
-              price="₹49,999"
+              price="₹44,999"
               features={[
                 "Custom AI Agents",
                 "Full Workflow Automation",
