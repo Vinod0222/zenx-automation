@@ -90,11 +90,36 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {[
-              { title: "Clinics & Hospitals", icon: Stethoscope, color: "text-blue-400" },
-              { title: "Local Businesses", icon: Store, color: "text-emerald-400" },
-              { title: "Service Centers", icon: Settings2, color: "text-orange-400" },
-              { title: "Agencies", icon: Building2, color: "text-purple-400" },
-              { title: "E-commerce", icon: ShoppingBag, color: "text-pink-400" }
+              { 
+                title: "Clinics & Hospitals", 
+                icon: Stethoscope, 
+                color: "text-blue-400",
+                statement: "Automate appointment bookings & patient inquiries 24/7"
+              },
+              { 
+                title: "Local Businesses", 
+                icon: Store, 
+                color: "text-emerald-400",
+                statement: "Capture local leads & handle common customer questions instantly"
+              },
+              { 
+                title: "Service Centers", 
+                icon: Settings2, 
+                color: "text-orange-400",
+                statement: "Streamline service scheduling & status updates automatically"
+              },
+              { 
+                title: "Agencies", 
+                icon: Building2, 
+                color: "text-purple-400",
+                statement: "Qualify high-ticket leads & automate client onboarding flows"
+              },
+              { 
+                title: "E-commerce", 
+                icon: ShoppingBag, 
+                color: "text-pink-400",
+                statement: "Recover abandoned carts & provide instant order tracking support"
+              }
             ].map((useCase, i) => (
               <motion.div
                 key={i}
@@ -109,7 +134,9 @@ export default function Home() {
                   <useCase.icon size={32} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold mb-3 font-heading leading-tight">{useCase.title}</h3>
-                <p className="text-sm text-muted-foreground italic font-medium">“Automate inquiries & capture leads 24/7”</p>
+                <p className="text-sm text-muted-foreground italic font-medium group-hover:text-foreground/90 transition-colors">
+                  “{useCase.statement}”
+                </p>
               </motion.div>
             ))}
           </div>
