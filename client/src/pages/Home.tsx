@@ -4,41 +4,14 @@ import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { ContactForm } from "@/components/ContactForm";
-import { motion, AnimatePresence } from "framer-motion";
-import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, X } from "lucide-react";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight } from "lucide-react";
 import BotpressChat from "@/components/BotpressChat";
 
 export default function Home() {
-  const [showChat, setShowChat] = useState(false);
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
-      <AnimatePresence>
-        {showChat && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
-          >
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-[500px] h-[600px] bg-card rounded-2xl border border-white/10 overflow-hidden shadow-2xl"
-            >
-              <button 
-                onClick={() => setShowChat(false)}
-                className="absolute top-4 right-4 z-[110] p-2 rounded-full bg-white/5 hover:bg-white/10 text-white transition-colors"
-              >
-                <X size={20} />
-              </button>
-              <BotpressChat />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <BotpressChat />
       <Navigation />
 
       {/* HERO SECTION */}
@@ -279,7 +252,11 @@ export default function Home() {
                   Try our demo bot to see how we can handle customer inquiries automatically.
                 </div>
                 <button 
-                  onClick={() => setShowChat(true)}
+                  onClick={() => {
+                    if (window.botpress && window.botpress.open) {
+                      window.botpress.open();
+                    }
+                  }}
                   className="text-primary font-medium flex items-center gap-2 hover:gap-3 transition-all"
                 >
                   Start Chat <ArrowRight size={16} />

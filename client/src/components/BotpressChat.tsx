@@ -18,7 +18,6 @@ export default function BotpressChat() {
         window.botpress.init({
           botId: "ae9965f2-0930-47c0-9f82-addd9ee197c4",
           clientId: "0c1c9e09-a7ab-479f-a3ad-8e0687946e18",
-          selector: "#webchat",
           configuration: {
             version: "v2",
             botName: "ZenX Assistant",
@@ -29,16 +28,12 @@ export default function BotpressChat() {
             feedbackEnabled: false,
             soundEnabled: false,
             footer: "",
-            proactiveMessageEnabled: false
+            proactiveMessageEnabled: true,
+            proactiveBubbleMessage: "Hi! 👋 Need help?",
+            proactiveBubbleTriggerType: "afterDelay",
+            proactiveBubbleDelayTime: 10
           }
         });
-
-        // Force open chat after load
-        setTimeout(() => {
-          if (window.botpress && typeof window.botpress.open === 'function') {
-            window.botpress.open();
-          }
-        }, 1000);
       }
     };
 
@@ -51,14 +46,5 @@ export default function BotpressChat() {
     };
   }, []);
 
-  return (
-    <div
-      id="webchat"
-      className="w-full h-full"
-      style={{
-        width: "100%",
-        height: "100%"
-      }}
-    />
-  );
+  return null;
 }
