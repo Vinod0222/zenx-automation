@@ -46,6 +46,9 @@ export function PricingCard({ title, price, features, isPopular, delay = 0 }: Pr
       </ul>
 
       <button
+        onClick={() => {
+          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        }}
         className={`w-full py-4 rounded-xl font-bold transition-all duration-300 group overflow-hidden relative ${
           isPopular
             ? "bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--primary))]"
