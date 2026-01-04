@@ -24,9 +24,19 @@ export function ContactForm() {
   function onSubmit(data: InsertInquiry) {
     mutate(data, {
       onSuccess: () => {
-        const whatsappNumber = "91701388368";
+        const whatsappNumber = "917019388368";
+        const emailAddress = "vinodyavp2001@gmail.com";
+        const subject = "New Lead from ZenX Website";
+        const body = `Name: ${data.name}\nEmail: ${data.email}\nBusiness: ${data.businessType || 'N/A'}\nMessage: ${data.message}`;
+        
         const message = `*New Lead from ZenX Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Business:* ${data.businessType || 'N/A'}%0A*Message:* ${data.message}`;
+        
+        // Open WhatsApp
         window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+        
+        // Open Gmail/Email
+        window.open(`mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+        
         form.reset();
       }
     });
