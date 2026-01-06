@@ -56,7 +56,7 @@ export function Navigation() {
             ))}
             <a
               href="#contact"
-              className="px-6 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+              className="px-6 py-2.5 rounded-full bg-[#161B22] border border-[#30363D] text-primary font-semibold text-sm hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.2)] transition-all duration-200 shadow-2xl"
             >
               Book Free Demo
             </a>
@@ -95,7 +95,7 @@ export function Navigation() {
               <a
                 href="#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="w-full text-center px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold"
+                className="w-full text-center px-6 py-3 rounded-xl bg-[#161B22] border border-[#30363D] text-primary font-semibold transition-all duration-200"
               >
                 Book Free Demo
               </a>

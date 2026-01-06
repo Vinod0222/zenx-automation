@@ -102,16 +102,16 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="#contact"
-                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.5)] transition-all duration-300 animate-glow relative group overflow-hidden"
+                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-[#161B22] border border-[#30363D] text-primary font-black text-xl hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,255,255,0.2)] transition-all duration-300 relative group overflow-hidden shadow-2xl"
                 >
                   <span className="relative z-10">Book Free Demo</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </motion.a>
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="#pricing"
-                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-white/5 border border-white/10 text-white font-black text-xl hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 group glass-panel overflow-hidden relative"
+                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-[#161B22] border border-[#30363D] text-white font-black text-xl hover:bg-[#1C2128] hover:border-white/20 transition-all duration-300 flex items-center justify-center gap-3 group glass-panel overflow-hidden relative shadow-2xl"
                 >
                   <span className="relative z-10">View Pricing</span>
                   <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform relative z-10" />
@@ -404,7 +404,7 @@ export default function Home() {
       {/* DEMO SECTION */}
       <section className="py-24 relative overflow-hidden bg-[#0A0C10]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-[#161B22]/40 border border-[#30363D] hover:border-primary/30 transition-all duration-500">
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-[#161B22]/60 border border-[#30363D] hover:border-primary/30 transition-all duration-500 shadow-[0_0_100px_rgba(0,0,0,0.5)]">
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <Bot size={120} className="text-primary" />
             </div>
@@ -425,7 +425,7 @@ export default function Home() {
                     window.botpress.open();
                   }
                 }}
-                className="px-12 py-6 rounded-full bg-primary text-primary-foreground font-black text-2xl hover:shadow-[0_0_60px_rgba(0,255,255,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
+                className="px-12 py-6 rounded-full bg-[#161B22] border border-[#30363D] text-primary font-black text-2xl hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,255,255,0.2)] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-2xl"
               >
                 Launch Live Chat
               </button>
@@ -528,7 +528,7 @@ export default function Home() {
                 ></textarea>
               </div>
               <button 
-                className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-black text-lg hover:shadow-[0_0_40px_rgba(0,255,255,0.4)] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full py-4 rounded-xl bg-[#0D1117] border border-[#30363D] text-primary font-black text-lg hover:bg-[#161B22] hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,255,255,0.2)] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 Post Your Review
               </button>

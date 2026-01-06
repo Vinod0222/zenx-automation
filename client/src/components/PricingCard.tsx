@@ -49,14 +49,14 @@ export function PricingCard({ title, price, features, isPopular, delay = 0 }: Pr
         onClick={() => {
           document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
         }}
-        className={`w-full py-4 rounded-xl font-bold transition-all duration-300 group overflow-hidden relative ${
+        className={`w-full py-4 rounded-xl font-bold transition-all duration-300 group overflow-hidden relative border ${
           isPopular
-            ? "bg-primary text-primary-foreground hover:shadow-[0_0_30px_hsl(var(--primary))]"
-            : "bg-white/10 text-white hover:bg-white/20"
+            ? "bg-[#161B22] border-primary/50 text-primary hover:shadow-[0_0_30px_rgba(0,255,255,0.2)]"
+            : "bg-[#161B22] border-[#30363D] text-white hover:bg-[#1C2128] hover:border-white/20"
         }`}
       >
         <span className="relative z-10">Get Started Now</span>
-        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-[-20deg]" />
+        <div className="absolute inset-0 bg-white/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-500 skew-x-[-20deg]" />
       </button>
     </motion.div>
   );

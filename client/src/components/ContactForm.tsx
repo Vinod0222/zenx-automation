@@ -145,7 +145,7 @@ export function ContactForm() {
           <Button 
             type="submit" 
             disabled={isPending}
-            className="w-full h-12 text-base bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
+            className="w-full h-12 text-base bg-[#161B22] border border-[#30363D] text-primary hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_30px_rgba(0,255,255,0.2)] transition-all duration-300 shadow-2xl"
           >
             {isPending ? (
               <>
