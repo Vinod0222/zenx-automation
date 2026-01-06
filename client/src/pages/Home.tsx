@@ -404,14 +404,14 @@ export default function Home() {
       {/* DEMO SECTION */}
       <section className="py-24 relative overflow-hidden bg-[#0A0C10]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-[#161B22]/60 border border-[#30363D] hover:border-primary/30 transition-all duration-500 shadow-[0_0_100px_rgba(0,0,0,0.5)]">
+          <div className="max-w-4xl mx-auto p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-[#161B22] border border-[#30363D] hover:border-primary/30 transition-all duration-500 shadow-2xl">
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <Bot size={120} className="text-primary" />
             </div>
             <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-white italic">
               See how it <span className="text-primary">works</span>
             </h2>
-            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
             </p>
             <div className="flex flex-col items-center gap-6">
@@ -425,7 +425,7 @@ export default function Home() {
                     window.botpress.open();
                   }
                 }}
-                className="px-12 py-6 rounded-full bg-[#161B22] border border-[#30363D] text-primary font-black text-2xl hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,255,255,0.2)] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-2xl"
+                className="px-12 py-6 rounded-full bg-[#0D1117] border border-[#30363D] text-primary font-black text-2xl hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,255,255,0.2)] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-2xl"
               >
                 Launch Live Chat
               </button>
