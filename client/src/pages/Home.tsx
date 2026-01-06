@@ -221,21 +221,18 @@ export default function Home() {
               description="Customized Website & WhatsApp chatbots. Lead qualification & automated customer support that learns your business."
               icon={Bot}
               delay={0.1}
-              className="hover-elevate active-elevate-2 transition-all duration-500"
             />
             <ServiceCard 
               title="Workflow Automation"
               description="Connect CRM, Google Sheets, & Email. Automated workflows that move data and save hours of manual labor."
               icon={Zap}
               delay={0.2}
-              className="hover-elevate active-elevate-2 transition-all duration-500"
             />
             <ServiceCard 
               title="AI Sales Agents"
               description="Intelligent sales, booking & engagement bots. High-performance AI trained to convert visitors into customers."
               icon={BrainCircuit}
               delay={0.3}
-              className="hover-elevate active-elevate-2 transition-all duration-500"
             />
           </div>
 
