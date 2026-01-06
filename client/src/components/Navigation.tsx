@@ -24,22 +24,22 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
+        isScrolled ? "bg-background/80 backdrop-blur-md border-b border-foreground/5 py-4" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="group flex flex-col items-start leading-none gap-0">
             <div className="flex items-baseline gap-1">
-              <span className="text-3xl font-bold tracking-tighter text-white">zen</span>
+              <span className="text-3xl font-bold tracking-tighter text-foreground">zen</span>
               <span className="text-4xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-600">X</span>
             </div>
             <div className="flex items-center gap-1.5 mt-1">
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/90">Automate</span>
-              <span className="h-2.5 w-[1px] bg-white/20"></span>
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/90">Innovate</span>
-              <span className="h-2.5 w-[1px] bg-white/20"></span>
-              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-white/90">Elevate</span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-foreground/70">Automate</span>
+              <span className="h-2.5 w-[1px] bg-foreground/10"></span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-foreground/70">Innovate</span>
+              <span className="h-2.5 w-[1px] bg-foreground/10"></span>
+              <span className="text-[9px] font-bold uppercase tracking-[0.25em] text-foreground/70">Elevate</span>
             </div>
           </Link>
 
@@ -79,7 +79,7 @@ export function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background border-b border-white/5 overflow-hidden"
+            className="md:hidden bg-background border-b border-foreground/5 overflow-hidden"
           >
             <div className="flex flex-col p-4 space-y-4">
               {navLinks.map((link) => (
