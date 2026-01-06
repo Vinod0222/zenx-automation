@@ -17,9 +17,9 @@ export default function Home() {
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         {/* Animated Gradient Background */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.15),transparent_50%)] -z-10 animate-pulse" />
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-blob" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.08),transparent_50%)] -z-10 animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-blob" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
@@ -437,15 +437,15 @@ export default function Home() {
             <div className="col-span-1 md:col-span-2">
               <Link href="/" className="group flex flex-col items-start mb-8 leading-none gap-0">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold tracking-tighter text-white">zen</span>
+                  <span className="text-4xl font-bold tracking-tighter text-foreground">zen</span>
                   <span className="text-5xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-600">X</span>
                 </div>
                 <div className="flex items-center gap-2 mt-2">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Automate</span>
-                  <span className="h-3 w-[1px] bg-white/20"></span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Innovate</span>
-                  <span className="h-3 w-[1px] bg-white/20"></span>
-                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-white/90">Elevate</span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/70">Automate</span>
+                  <span className="h-3 w-[1px] bg-foreground/10"></span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/70">Innovate</span>
+                  <span className="h-3 w-[1px] bg-foreground/10"></span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/70">Elevate</span>
                 </div>
               </Link>
               <p className="text-muted-foreground max-w-xs">
