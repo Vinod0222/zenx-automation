@@ -16,44 +16,56 @@ export default function Home() {
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Abstract Background Elements */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10" />
-        <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] -z-10" />
+        {/* Animated Gradient Background */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.15),transparent_50%)] -z-10 animate-pulse" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] -z-10 animate-blob" />
+        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="inline-block px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium text-primary mb-6 backdrop-blur-sm">
+              <motion.span 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block px-6 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-primary mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(0,255,255,0.1)]"
+              >
                 Next Gen AI Automation
-              </span>
-              <h1 className="text-5xl md:text-7xl font-bold font-heading tracking-tight mb-6 leading-[1.1]">
-                Automate Smarter. <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 text-glow">
-                  Scale Faster.
+              </motion.span>
+              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-heading tracking-tighter mb-8 leading-[0.9] perspective-1000">
+                Automate <br className="hidden md:block" />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient-x inline-block hover:scale-105 transition-transform duration-500 cursor-default">
+                  Everything.
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-                Transform your business with AI-powered chatbots and custom automation solutions. Reduce costs and increase efficiency overnight.
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-tight font-medium opacity-80">
+                Elevate your business with intelligent AI agents that think, learn, and grow with you. Efficiency redefined.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a 
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                <motion.a 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="#contact"
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-primary text-primary-foreground font-bold text-lg hover:shadow-[0_0_40px_rgba(186,255,255,0.4)] transition-all duration-300 animate-glow"
+                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.5)] transition-all duration-300 animate-glow relative group overflow-hidden"
                 >
-                  Book Free Demo
-                </a>
-                <a 
+                  <span className="relative z-10">Book Free Demo</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                </motion.a>
+                <motion.a 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   href="#pricing"
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2 group glass-panel"
+                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-white/5 border border-white/10 text-white font-black text-xl hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3 group glass-panel overflow-hidden relative"
                 >
-                  View Pricing
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                  <span className="relative z-10">View Pricing</span>
+                  <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform relative z-10" />
+                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </motion.a>
               </div>
             </motion.div>
           </div>
