@@ -1,21 +1,68 @@
+import { useState, useEffect } from "react";
 import stockImage from "@assets/stock_images/industrial_robotic_a_ef02b53c.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { ContactForm } from "@/components/ContactForm";
-import { motion } from "framer-motion";
-import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, Stethoscope, Store, Settings2, Building2, ShoppingBag, HelpCircle } from "lucide-react";
+import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
+import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, Stethoscope, Store, Settings2, Building2, ShoppingBag, HelpCircle, Cpu, Network, Sparkles } from "lucide-react";
 import BotpressChat from "@/components/BotpressChat";
 
 export default function Home() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
+  const cursorX = useSpring(mouseX, { damping: 20, stiffness: 100 });
+  const cursorY = useSpring(mouseY, { damping: 20, stiffness: 100 });
+  const bgTransform = useTransform(
+    [cursorX, cursorY],
+    ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(0,255,255,0.15), transparent 80%)`
+  );
+
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 relative">
+      <motion.div 
+        className="pointer-events-none fixed inset-0 z-30 opacity-40 mix-blend-screen"
+        style={{ background: bgTransform }}
+      />
       <BotpressChat />
       <Navigation />
 
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        {/* Animated Background Icons */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+          {[Cpu, Network, Sparkles, Bot, Zap].map((Icon, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: [0.1, 0.3, 0.1],
+                y: [Math.random() * 100, Math.random() * -100, Math.random() * 100],
+                x: [Math.random() * 50, Math.random() * -50, Math.random() * 50],
+                rotate: [0, 360]
+              }}
+              transition={{ duration: 10 + i * 2, repeat: Infinity, ease: "linear" }}
+              className="absolute text-primary"
+              style={{
+                top: `${Math.random() * 100}%`,
+                left: `${Math.random() * 100}%`,
+              }}
+            >
+              <Icon size={40 + i * 10} strokeWidth={1} />
+            </motion.div>
+          ))}
+        </div>
         {/* Animated Gradient Background */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.08),transparent_50%)] -z-10 animate-pulse" />
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-blob" />
