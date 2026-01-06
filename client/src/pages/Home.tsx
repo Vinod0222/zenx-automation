@@ -402,16 +402,16 @@ export default function Home() {
       </section>
 
       {/* DEMO SECTION */}
-      <section className="py-24 relative overflow-hidden bg-black/40">
+      <section className="py-24 relative overflow-hidden bg-[#0A0C10]">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/5 border-white/10 backdrop-blur-2xl hover:border-primary/20 transition-all duration-500 shadow-2xl">
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-[#161B22]/40 border border-[#30363D] hover:border-primary/30 transition-all duration-500">
             <div className="absolute top-0 right-0 p-4 opacity-5">
               <Bot size={120} className="text-primary" />
             </div>
             <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-white italic">
               See how it <span className="text-primary">works</span>
             </h2>
-            <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
             </p>
             <div className="flex flex-col items-center gap-6">
@@ -435,11 +435,11 @@ export default function Home() {
       </section>
 
       {/* REVIEWS SECTION */}
-      <section id="reviews" className="py-24 bg-black/60 relative">
+      <section id="reviews" className="py-24 bg-[#0A0C10] relative">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-glow italic">What Our Clients Say</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-glow italic text-white">What Our Clients Say</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">
               Don't just take our word for it. Hear from businesses already scaling with ZenX.
             </p>
           </div>
@@ -471,22 +471,22 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 rounded-3xl glass-panel relative group bg-white/[0.03] border-white/5 hover:border-primary/20 transition-all duration-300"
+                className="p-8 rounded-3xl bg-[#161B22]/60 border border-[#30363D] hover:border-primary/40 transition-all duration-300 relative group"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} size={14} className="fill-primary text-primary" />
                   ))}
                 </div>
-                <Quote className="absolute top-8 right-8 text-primary/5 w-10 h-10" />
-                <p className="text-lg text-white/80 mb-6 italic leading-relaxed">"{review.content}"</p>
+                <Quote className="absolute top-8 right-8 text-primary/10 w-10 h-10" />
+                <p className="text-lg text-gray-200 mb-6 italic leading-relaxed">"{review.content}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-sm">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-bold text-sm">
                     {review.name[0]}
                   </div>
                   <div>
                     <div className="font-bold text-white text-sm">{review.name}</div>
-                    <div className="text-xs text-white/50">{review.role}</div>
+                    <div className="text-xs text-gray-500">{review.role}</div>
                   </div>
                 </div>
               </motion.div>
@@ -494,33 +494,43 @@ export default function Home() {
           </div>
 
           {/* MANUAL REVIEW FORM */}
-          <div className="max-w-2xl mx-auto glass-panel p-8 rounded-3xl bg-white/[0.02] border-white/5">
+          <div className="max-w-2xl mx-auto bg-[#161B22]/80 border border-[#30363D] p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl -z-10" />
             <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
               <Sparkles className="text-primary w-5 h-5" />
               Leave a Review
             </h3>
             <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-primary/50 transition-colors outline-none"
-                />
-                <input 
-                  type="text" 
-                  placeholder="Your Role (e.g. CEO)" 
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-primary/50 transition-colors outline-none"
-                />
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Your Name</label>
+                  <input 
+                    type="text" 
+                    placeholder="Enter your name" 
+                    className="w-full px-4 py-3 rounded-xl bg-[#0D1117] border border-[#30363D] text-white placeholder:text-gray-600 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Your Role</label>
+                  <input 
+                    type="text" 
+                    placeholder="e.g. CEO, Manager" 
+                    className="w-full px-4 py-3 rounded-xl bg-[#0D1117] border border-[#30363D] text-white placeholder:text-gray-600 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none"
+                  />
+                </div>
               </div>
-              <textarea 
-                placeholder="Share your experience..." 
-                rows={4}
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-primary/50 transition-colors outline-none resize-none"
-              ></textarea>
+              <div className="space-y-1.5">
+                <label className="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Your Message</label>
+                <textarea 
+                  placeholder="Tell us about your experience..." 
+                  rows={4}
+                  className="w-full px-4 py-3 rounded-xl bg-[#0D1117] border border-[#30363D] text-white placeholder:text-gray-600 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all outline-none resize-none"
+                ></textarea>
+              </div>
               <button 
-                className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:shadow-[0_0_30px_rgba(0,255,255,0.3)] transition-all duration-300"
+                className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-black text-lg hover:shadow-[0_0_40px_rgba(0,255,255,0.4)] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
               >
-                Post Review
+                Post Your Review
               </button>
             </form>
           </div>
