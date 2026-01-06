@@ -5,47 +5,26 @@
 @tailwind utilities;
 
 :root {
-  --background: 210 20% 90%; /* Natural, subtle slate-grey light background */
-  --foreground: 222 47% 11%;
-  
-  --primary: 186 100% 35%; /* Balanced Cyber Cyan */
-  --primary-foreground: 210 40% 98%;
-  
-  --secondary: 210 20% 85%;
-  --secondary-foreground: 222 47% 11.2%;
-  
-  --muted: 210 20% 85%;
-  --muted-foreground: 215.4 16.3% 40%;
-  
-  --accent: 280 60% 50%; /* Balanced Neon Purple */
-  --accent-foreground: 210 40% 98%;
-  
-  --border: 214.3 20% 80%;
-  --input: 214.3 20% 80%;
-  --ring: 186 100% 35%;
-  
-  --radius: 0.75rem;
-}
-
-.dark {
-  --background: 222 47% 2%;
+  --background: 220 15% 15%; /* Darker slate-grey background for depth */
   --foreground: 210 40% 98%;
   
-  --primary: 186 100% 50%;
+  --primary: 186 100% 50%; /* Vibrant Cyber Cyan */
   --primary-foreground: 222 47% 4%;
   
-  --secondary: 217 19% 7%;
+  --secondary: 220 15% 20%;
   --secondary-foreground: 210 40% 98%;
   
-  --muted: 217 19% 5%;
-  --muted-foreground: 215 20% 55%;
+  --muted: 220 15% 12%;
+  --muted-foreground: 215 20% 65%;
   
-  --accent: 280 80% 60%;
+  --accent: 280 80% 65%; /* Vibrant Neon Purple */
   --accent-foreground: 210 40% 98%;
   
-  --border: 217 19% 12%;
-  --input: 217 19% 12%;
+  --border: 220 15% 25%;
+  --input: 220 15% 25%;
   --ring: 186 100% 50%;
+  
+  --radius: 0.75rem;
 }
 
 @layer base {
@@ -53,8 +32,11 @@
     @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
     font-family: 'Inter', sans-serif;
     background-image: 
-      radial-gradient(at 0% 0%, hsla(186, 100%, 35%, 0.08) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(280, 80%, 50%, 0.08) 0px, transparent 50%);
+      linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px),
+      radial-gradient(at 0% 0%, hsla(186, 100%, 50%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(280, 80%, 60%, 0.15) 0px, transparent 50%);
+    background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%;
     background-attachment: fixed;
   }
   
