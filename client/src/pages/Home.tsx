@@ -10,7 +10,7 @@ import { ServiceCard } from "@/components/ServiceCard";
 import { PricingCard } from "@/components/PricingCard";
 import { ContactForm } from "@/components/ContactForm";
 import { motion, useSpring, useMotionValue, useTransform } from "framer-motion";
-import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, Stethoscope, Store, Settings2, Building2, ShoppingBag, HelpCircle, Cpu, Network, Sparkles } from "lucide-react";
+import { Bot, Zap, BrainCircuit, ChevronRight, CheckCircle2, ArrowRight, Stethoscope, Store, Settings2, Building2, ShoppingBag, HelpCircle, Cpu, Network, Sparkles, Star, Quote } from "lucide-react";
 import BotpressChat from "@/components/BotpressChat";
 
 export default function Home() {
@@ -402,17 +402,16 @@ export default function Home() {
       </section>
 
       {/* DEMO SECTION */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="absolute inset-0 bg-primary/5 -z-10" />
+      <section className="py-24 relative overflow-hidden bg-slate-900/5">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/5 border-white/10 backdrop-blur-2xl hover:border-primary/30 transition-colors duration-500">
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/80 border-white/20 backdrop-blur-2xl shadow-2xl">
             <div className="absolute top-0 right-0 p-4 opacity-10">
               <Bot size={120} className="text-primary" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-glow text-foreground italic">
+            <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-slate-900 italic">
               See how it <span className="text-primary">works</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
             </p>
             <div className="flex flex-col items-center gap-6">
@@ -431,6 +430,67 @@ export default function Home() {
                 Launch Live Chat
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* REVIEWS SECTION */}
+      <section id="reviews" className="py-24 bg-white/5">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-glow italic">What Our Clients Say</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
+              Don't just take our word for it. Hear from businesses already scaling with ZenX.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Dr. Sarah Chen",
+                role: "Clinic Director",
+                content: "The AI appointment bot has reduced our front-desk calls by 60%. Patients love the instant booking feature!",
+                rating: 5
+              },
+              {
+                name: "Mark Thompson",
+                role: "E-commerce Founder",
+                content: "Abandoned cart recovery is now fully automated. We saw a 15% increase in revenue in the first month alone.",
+                rating: 5
+              },
+              {
+                name: "Alex Rivera",
+                role: "Agency Owner",
+                content: "ZenX's lead qualification bot is like having a top-tier sales rep working 24/7. Highly recommended!",
+                rating: 5
+              }
+            ].map((review, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-8 rounded-3xl glass-panel relative group"
+              >
+                <div className="flex gap-1 mb-4">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <Star key={i} size={16} className="fill-primary text-primary" />
+                  ))}
+                </div>
+                <Quote className="absolute top-8 right-8 text-primary/10 w-12 h-12" />
+                <p className="text-lg text-foreground/90 mb-6 italic leading-relaxed">"{review.content}"</p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                    {review.name[0]}
+                  </div>
+                  <div>
+                    <div className="font-bold text-foreground">{review.name}</div>
+                    <div className="text-sm text-muted-foreground">{review.role}</div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
