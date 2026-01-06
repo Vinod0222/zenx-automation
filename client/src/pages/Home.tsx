@@ -3,6 +3,7 @@ import stockImage1 from "@assets/stock_images/futuristic_ai_robot__07177da8.jpg"
 import stockImage2 from "@assets/stock_images/futuristic_ai_robot__ee2ff8f4.jpg";
 import stockImage3 from "@assets/stock_images/futuristic_ai_robot__3034dbc1.jpg";
 import stockImage4 from "@assets/stock_images/high-tech_futuristic_934bc576.jpg";
+import stockImage5 from "@assets/stock_images/futuristic_digital_n_4b91da1b.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -259,7 +260,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="relative group rounded-3xl overflow-hidden glass-panel"
             >
-              <img src={stockImage2} alt="AI Collaboration" className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+              <img src={stockImage5} alt="AI Collaboration" className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Infinite Scaling</h3>
@@ -401,27 +402,31 @@ export default function Home() {
       </section>
 
       {/* DEMO SECTION */}
-      <section className="py-24 bg-black/40">
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-primary/5 -z-10" />
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/10 border-white/20 backdrop-blur-2xl">
-            <div className="absolute top-0 right-0 p-4 opacity-20">
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/5 border-white/10 backdrop-blur-2xl hover:border-primary/30 transition-colors duration-500">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
               <Bot size={120} className="text-primary" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6 italic text-glow text-white">See how it works</h2>
-            <p className="text-xl text-white/90 mb-8 font-medium">
+            <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-glow text-foreground italic">
+              See how it <span className="text-primary">works</span>
+            </h2>
+            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
               Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
             </p>
-            <div className="flex flex-col items-center gap-4">
-              <p className="text-primary font-black animate-pulse uppercase tracking-widest text-sm drop-shadow-sm">
-                👉 Try asking for a demo
-              </p>
+            <div className="flex flex-col items-center gap-6">
+              <div className="flex items-center gap-2 text-primary font-black uppercase tracking-[0.3em] text-xs animate-pulse">
+                <span>Try asking for a demo</span>
+                <ArrowRight size={14} />
+              </div>
               <button 
                 onClick={() => {
                   if (window.botpress && window.botpress.open) {
                     window.botpress.open();
                   }
                 }}
-                className="px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.6)] transition-all animate-glow ring-2 ring-primary/20"
+                className="px-12 py-6 rounded-full bg-primary text-primary-foreground font-black text-2xl hover:shadow-[0_0_60px_rgba(0,255,255,0.4)] transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl shadow-primary/20"
               >
                 Launch Live Chat
               </button>
