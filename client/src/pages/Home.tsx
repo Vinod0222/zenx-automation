@@ -402,16 +402,16 @@ export default function Home() {
       </section>
 
       {/* DEMO SECTION */}
-      <section className="py-24 relative overflow-hidden bg-slate-900/5">
+      <section className="py-24 relative overflow-hidden bg-black/40">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/80 border-white/20 backdrop-blur-2xl shadow-2xl">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/5 border-white/10 backdrop-blur-2xl hover:border-primary/20 transition-all duration-500 shadow-2xl">
+            <div className="absolute top-0 right-0 p-4 opacity-5">
               <Bot size={120} className="text-primary" />
             </div>
-            <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-slate-900 italic">
+            <h2 className="text-4xl md:text-6xl font-black font-heading mb-6 tracking-tighter text-white italic">
               See how it <span className="text-primary">works</span>
             </h2>
-            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed font-medium">
               Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
             </p>
             <div className="flex flex-col items-center gap-6">
@@ -435,7 +435,7 @@ export default function Home() {
       </section>
 
       {/* REVIEWS SECTION */}
-      <section id="reviews" className="py-24 bg-white/5">
+      <section id="reviews" className="py-24 bg-black/60 relative">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-glow italic">What Our Clients Say</h2>
@@ -444,7 +444,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {[
               {
                 name: "Dr. Sarah Chen",
@@ -471,26 +471,58 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 rounded-3xl glass-panel relative group"
+                className="p-8 rounded-3xl glass-panel relative group bg-white/[0.03] border-white/5 hover:border-primary/20 transition-all duration-300"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} size={16} className="fill-primary text-primary" />
+                    <Star key={i} size={14} className="fill-primary text-primary" />
                   ))}
                 </div>
-                <Quote className="absolute top-8 right-8 text-primary/10 w-12 h-12" />
-                <p className="text-lg text-foreground/90 mb-6 italic leading-relaxed">"{review.content}"</p>
+                <Quote className="absolute top-8 right-8 text-primary/5 w-10 h-10" />
+                <p className="text-lg text-white/80 mb-6 italic leading-relaxed">"{review.content}"</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-primary font-bold text-sm">
                     {review.name[0]}
                   </div>
                   <div>
-                    <div className="font-bold text-foreground">{review.name}</div>
-                    <div className="text-sm text-muted-foreground">{review.role}</div>
+                    <div className="font-bold text-white text-sm">{review.name}</div>
+                    <div className="text-xs text-white/50">{review.role}</div>
                   </div>
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          {/* MANUAL REVIEW FORM */}
+          <div className="max-w-2xl mx-auto glass-panel p-8 rounded-3xl bg-white/[0.02] border-white/5">
+            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <Sparkles className="text-primary w-5 h-5" />
+              Leave a Review
+            </h3>
+            <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <input 
+                  type="text" 
+                  placeholder="Your Name" 
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-primary/50 transition-colors outline-none"
+                />
+                <input 
+                  type="text" 
+                  placeholder="Your Role (e.g. CEO)" 
+                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-primary/50 transition-colors outline-none"
+                />
+              </div>
+              <textarea 
+                placeholder="Share your experience..." 
+                rows={4}
+                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:border-primary/50 transition-colors outline-none resize-none"
+              ></textarea>
+              <button 
+                className="w-full py-4 rounded-xl bg-primary text-primary-foreground font-bold hover:shadow-[0_0_30px_rgba(0,255,255,0.3)] transition-all duration-300"
+              >
+                Post Review
+              </button>
+            </form>
           </div>
         </div>
       </section>
