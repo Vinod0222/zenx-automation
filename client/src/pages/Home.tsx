@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import stockImage1 from "@assets/stock_images/futuristic_ai_robot__07177da8.jpg";
 import stockImage2 from "@assets/stock_images/futuristic_ai_robot__ee2ff8f4.jpg";
 import stockImage3 from "@assets/stock_images/futuristic_ai_robot__3034dbc1.jpg";
+import stockImage4 from "@assets/stock_images/high-tech_futuristic_934bc576.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -315,9 +316,9 @@ export default function Home() {
                 className="absolute inset-0 bg-primary/20 blur-[120px] -z-10 rounded-full scale-90 group-hover:scale-100 transition-transform duration-700" 
               />
               <img 
-                src={stockImage3} 
-                alt="AI Process Visualization" 
-                className="rounded-3xl border border-white/20 shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-500"
+                src={stockImage4} 
+                alt="AI Neural Process" 
+                className="rounded-3xl border border-white/20 shadow-2xl relative z-10 hover:scale-[1.02] transition-transform duration-500 w-full h-auto"
               />
             </div>
           </div>
@@ -402,16 +403,16 @@ export default function Home() {
       {/* DEMO SECTION */}
       <section className="py-24 bg-black/40">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <Bot size={120} />
+          <div className="max-w-4xl mx-auto glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden text-center bg-white/10 border-white/20 backdrop-blur-2xl">
+            <div className="absolute top-0 right-0 p-4 opacity-20">
+              <Bot size={120} className="text-primary" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6 italic text-glow">See how it works</h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-6 italic text-glow text-white">See how it works</h2>
+            <p className="text-xl text-white/90 mb-8 font-medium">
               Experience the power of ZenX automation. Our live demo bot is waiting to show you its capabilities.
             </p>
             <div className="flex flex-col items-center gap-4">
-              <p className="text-primary font-bold animate-pulse uppercase tracking-widest text-sm">
+              <p className="text-primary font-black animate-pulse uppercase tracking-widest text-sm drop-shadow-sm">
                 👉 Try asking for a demo
               </p>
               <button 
@@ -420,7 +421,7 @@ export default function Home() {
                     window.botpress.open();
                   }
                 }}
-                className="px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.4)] transition-all animate-glow"
+                className="px-10 py-5 rounded-full bg-primary text-primary-foreground font-black text-xl hover:shadow-[0_0_50px_rgba(0,255,255,0.6)] transition-all animate-glow ring-2 ring-primary/20"
               >
                 Launch Live Chat
               </button>
