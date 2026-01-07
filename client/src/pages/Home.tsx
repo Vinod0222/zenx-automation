@@ -37,6 +37,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 relative">
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" style={{ transform: 'perspective(1000px) rotateX(60deg) translateY(-200px) translateZ(-500px)', transformOrigin: 'top' }} />
+      </div>
       <motion.div 
         className="pointer-events-none fixed inset-0 z-30 opacity-40 mix-blend-screen"
         style={{ background: bgTransform }}
