@@ -3,7 +3,8 @@ import stockImage1 from "@assets/stock_images/futuristic_ai_robot__07177da8.jpg"
 import stockImage2 from "@assets/stock_images/futuristic_ai_robot__ee2ff8f4.jpg";
 import stockImage3 from "@assets/stock_images/futuristic_ai_robot__3034dbc1.jpg";
 import stockImage4 from "@assets/stock_images/high-tech_futuristic_934bc576.jpg";
-import stockImage5 from "@assets/stock_images/futuristic_digital_n_4b91da1b.jpg";
+import stockImage6 from "@assets/stock_images/futuristic_isometric_867bbcda.jpg";
+import stockImage7 from "@assets/stock_images/futuristic_isometric_13e2461e.jpg";
 import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -73,51 +74,64 @@ export default function Home() {
         <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000" />
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <motion.span 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-                className="inline-block px-6 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-widest text-primary mb-8 backdrop-blur-xl shadow-[0_0_20px_rgba(0,255,255,0.1)]"
+                className="inline-block px-4 py-1.5 rounded-sm bg-primary/10 border border-primary/20 text-[10px] font-black uppercase tracking-[0.4em] text-primary mb-6"
               >
-                Next Gen AI Automation
+                ZenX Automation
               </motion.span>
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-heading tracking-tighter mb-8 leading-[0.9] perspective-1000">
-                Automate <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 animate-gradient-x inline-block hover:scale-105 transition-transform duration-500 cursor-default">
-                  Everything.
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black font-heading tracking-tighter mb-6 leading-[0.9] uppercase">
+                Unlock the <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-600">
+                  Power of AI
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-tight font-medium opacity-80">
-                Elevate your business with intelligent AI agents that think, learn, and grow with you. Efficiency redefined.
+              <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl leading-relaxed opacity-70">
+                Transforming industries through next-generation intelligent automation. Efficiency redefined for the modern age.
               </p>
               
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="#contact"
-                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-[#161B22] border border-[#30363D] text-primary font-black text-xl hover:bg-[#1C2128] hover:border-primary/50 hover:shadow-[0_0_40px_rgba(0,255,255,0.2)] transition-all duration-300 relative group overflow-hidden shadow-2xl"
+                  className="w-full sm:w-auto px-8 py-4 rounded-sm bg-primary text-primary-foreground font-black text-sm uppercase tracking-widest hover:shadow-[0_0_40px_rgba(0,255,255,0.4)] transition-all duration-300 relative group overflow-hidden"
                 >
                   <span className="relative z-10">Book Free Demo</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                 </motion.a>
                 <motion.a 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="#pricing"
-                  className="w-full sm:w-auto px-10 py-5 rounded-full bg-[#161B22] border border-[#30363D] text-white font-black text-xl hover:bg-[#1C2128] hover:border-white/20 transition-all duration-300 flex items-center justify-center gap-3 group glass-panel overflow-hidden relative shadow-2xl"
+                  className="w-full sm:w-auto px-8 py-4 rounded-sm bg-white/5 border border-white/10 text-white font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all duration-300"
                 >
-                  <span className="relative z-10">View Pricing</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-2 transition-transform relative z-10" />
-                  <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  View Pricing
                 </motion.a>
               </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
+              animate={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-primary/20 blur-[120px] rounded-full animate-pulse" />
+              <img 
+                src={stockImage6} 
+                alt="Futuristic AI" 
+                className="relative z-10 w-full max-w-2xl mx-auto rounded-3xl shadow-[0_0_100px_rgba(0,255,255,0.2)]"
+              />
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-purple-500/20 rounded-full blur-[60px] animate-blob" />
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-cyan-500/20 rounded-full blur-[80px] animate-blob animation-delay-2000" />
             </motion.div>
           </div>
         </div>
