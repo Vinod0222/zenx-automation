@@ -3,6 +3,7 @@ import stockImage1 from "@assets/stock_images/futuristic_ai_robot__07177da8.jpg"
 import stockImage2 from "@assets/stock_images/futuristic_ai_robot__ee2ff8f4.jpg";
 import stockImage3 from "@assets/stock_images/futuristic_ai_robot__3034dbc1.jpg";
 import stockImage4 from "@assets/stock_images/high-tech_futuristic_934bc576.jpg";
+import stockImage5 from "@assets/stock_images/futuristic_digital_n_4b91da1b.jpg";
 import stockImage6 from "@assets/stock_images/futuristic_isometric_867bbcda.jpg";
 import stockImage7 from "@assets/stock_images/futuristic_isometric_13e2461e.jpg";
 import { Link } from "wouter";
@@ -274,7 +275,7 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="relative group rounded-3xl overflow-hidden glass-panel"
             >
-              <img src={stockImage5} alt="AI Collaboration" className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+              <img src={stockImage6} alt="AI Collaboration" className="w-full h-[400px] object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-8">
                 <div>
                   <h3 className="text-2xl font-bold text-white mb-2">Infinite Scaling</h3>
