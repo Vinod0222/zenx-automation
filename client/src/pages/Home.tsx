@@ -156,6 +156,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TRUST BAR SECTION */}
+      <section className="py-12 border-y border-white/5 bg-white/[0.02] overflow-hidden">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground mb-8">
+            Trusted by Industry Leaders
+          </p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
+              <Building2 size={24} className="text-primary" />
+              <span>NEXUS</span>
+            </div>
+            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
+              <Store size={24} className="text-primary" />
+              <span>MODERNUS</span>
+            </div>
+            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
+              <ShoppingBag size={24} className="text-primary" />
+              <span>VORTEX</span>
+            </div>
+            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
+              <Settings2 size={24} className="text-primary" />
+              <span>CORE</span>
+            </div>
+            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
+              <Zap size={24} className="text-primary" />
+              <span>LUMEN</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* USE-CASES SECTION */}
       <section id="use-cases" className="py-24 relative overflow-hidden bg-white/[0.01]">
         <div className="container mx-auto px-4 md:px-6">

@@ -32,12 +32,15 @@
     @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
     font-family: 'Inter', sans-serif;
     background-image: 
-      linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px),
-      radial-gradient(at 0% 0%, hsla(186, 100%, 50%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, hsla(280, 80%, 60%, 0.15) 0px, transparent 50%);
-    background-size: 50px 50px, 50px 50px, 100% 100%, 100% 100%;
+      linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(at 50% 50%, rgba(0, 255, 255, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 0%, hsla(186, 100%, 50%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(280, 80%, 60%, 0.1) 0px, transparent 50%);
+    background-size: 60px 60px, 60px 60px, 100% 100%, 100% 100%, 100% 100%;
     background-attachment: fixed;
+    perspective: 1200px;
+    transform-style: preserve-3d;
   }
   
   h1, h2, h3, h4, h5, h6 {
