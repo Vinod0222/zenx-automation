@@ -679,9 +679,9 @@ export default function Home() {
             <div>
               <h4 className="font-bold mb-4 uppercase tracking-widest text-xs text-primary">Connect</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
+                <li><a href="https://linkedin.com/in/zenx-pro-30ba863a3" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">LinkedIn</a></li>
+                <li><a href="https://x.com/zenXproAI" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Twitter</a></li>
+                <li><a href="https://www.instagram.com/zenx._.pro?igsh=bXFjcnp2d3BuMWt2" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Instagram</a></li>
               </ul>
             </div>
           </div>
