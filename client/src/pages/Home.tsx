@@ -37,20 +37,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 relative">
-      <div className="fixed inset-0 pointer-events-none z-0">
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" style={{ transform: 'perspective(1000px) rotateX(60deg) translateY(-200px) translateZ(-500px)', transformOrigin: 'top' }} />
-      </div>
-      <motion.div 
-        className="pointer-events-none fixed inset-0 z-30 opacity-40 mix-blend-screen"
-        style={{ background: bgTransform }}
-      />
-      <BotpressChat />
-      <Navigation />
-
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Animated Background Icons */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        {/* Animated Background Icons (Global) */}
+        <div className="absolute inset-0 opacity-10">
           {[Cpu, Network, Sparkles, Bot, Zap].map((Icon, i) => (
             <motion.div
               key={i}
@@ -61,22 +50,33 @@ export default function Home() {
                 x: [Math.random() * 50, Math.random() * -50, Math.random() * 50],
                 rotate: [0, 360]
               }}
-              transition={{ duration: 10 + i * 2, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 15 + i * 5, repeat: Infinity, ease: "linear" }}
               className="absolute text-primary"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
               }}
             >
-              <Icon size={40 + i * 10} strokeWidth={1} />
+              <Icon size={60 + i * 20} strokeWidth={0.5} />
             </motion.div>
           ))}
         </div>
-        {/* Animated Gradient Background */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,255,0.08),transparent_50%)] -z-10 animate-pulse" />
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] -z-10 animate-blob" />
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-purple-500/5 rounded-full blur-[100px] -z-10 animate-blob animation-delay-2000" />
+        {/* 3D Grid */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,255,255,0.05)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" style={{ transform: 'perspective(1000px) rotateX(60deg) translateY(-200px) translateZ(-500px)', transformOrigin: 'top' }} />
+        
+        {/* Global blobs */}
+        <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[150px] animate-blob" />
+        <div className="absolute bottom-1/4 right-1/4 w-[1000px] h-[1000px] bg-purple-500/5 rounded-full blur-[150px] animate-blob animation-delay-2000" />
+      </div>
+      <motion.div 
+        className="pointer-events-none fixed inset-0 z-30 opacity-40 mix-blend-screen"
+        style={{ background: bgTransform }}
+      />
+      <BotpressChat />
+      <Navigation />
 
+      {/* HERO SECTION */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-left">
             <motion.div
@@ -156,37 +156,6 @@ export default function Home() {
           >
             <BrainCircuit size={64} />
           </motion.div>
-        </div>
-      </section>
-
-      {/* TRUST BAR SECTION */}
-      <section className="py-12 border-y border-white/5 bg-white/[0.02] overflow-hidden">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-[10px] font-black uppercase tracking-[0.4em] text-muted-foreground mb-8">
-            Trusted by Industry Leaders
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
-            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
-              <Building2 size={24} className="text-primary" />
-              <span>NEXUS</span>
-            </div>
-            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
-              <Store size={24} className="text-primary" />
-              <span>MODERNUS</span>
-            </div>
-            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
-              <ShoppingBag size={24} className="text-primary" />
-              <span>VORTEX</span>
-            </div>
-            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
-              <Settings2 size={24} className="text-primary" />
-              <span>CORE</span>
-            </div>
-            <div className="flex items-center gap-2 font-black text-xl tracking-tighter">
-              <Zap size={24} className="text-primary" />
-              <span>LUMEN</span>
-            </div>
-          </div>
         </div>
       </section>
 
